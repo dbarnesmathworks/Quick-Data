@@ -25,8 +25,8 @@ classdef testheadRand < matlab.unittest.TestCase
                 qd.headRand(T, -3)
             catch e
             end
-                % Verify that calling headRand with negative numRows throws an error
-                testCase.verifyEqual(e.identifier, 'MATLAB:validators:mustBePositive');
-            end
+            % Verify that calling headRand with negative numRows throws an error
+            testCase.verifyEqual(e.identifier, 'MATLAB:validators:mustBePositive');
         end
     end
+end
