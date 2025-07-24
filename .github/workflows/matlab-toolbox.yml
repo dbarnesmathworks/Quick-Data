@@ -1,8 +1,10 @@
-name: Build and Package MATLAB Toolbox
+name: Test Source Code and on a Release Tag Package MATLAB Toolbox
 
 on:
   push:
     branches: [ main ]
+    tags:
+      - 'v*.*.*'
   pull_request:
 
 jobs:
@@ -25,3 +27,14 @@ jobs:
           name: Quick Data Toolbox.mltbx
           path: |
             release/Quick Data Toolbox.mltbx
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+           tag_name: ${{ github.ref_name }}
+           name: Toolbox ${{ github.ref_name }}
+           files: |
+             release/Quick Data Toolbox.mltbx
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
