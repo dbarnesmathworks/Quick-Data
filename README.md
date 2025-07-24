@@ -14,6 +14,7 @@ The functions are organized under the `qd.` namespace and are designed to simpli
 - MATLAB R2022b or newer
 
 ## Creating A New Release
+
 The release tag must be named according to MATLAB Toolbox semantic versioning, which is MAJOR.MINOR.PATCH (e.g."2.0.1").
 
 ## Contributions
