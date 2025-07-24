@@ -2,7 +2,8 @@ name: Test Source Code and on a Release Tag Package MATLAB Toolbox
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
     tags:
       - '*.*.*'
   pull_request:
