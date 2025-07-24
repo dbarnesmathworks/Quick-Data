@@ -16,13 +16,21 @@ function opts = toolboxOptions
     % when you add functionality in a backward compatible manner. Increment
     % the PATCH version when you make backward compatible bug fixes.
 
+    % I tried to be smart, but to increment the release, edit this file to
+    % be the new release, push the change, use "git tag X.X.X" in the 
+    % command line, and then "git push origin X.X.X"
+    opts.ToolboxVersion = "0.0.1";
+
+    % I tried to be smart about this, but I cannot get the tag from the git
+    % API
+
     % Using release tags in source control when creating a release
-    g = gitrepo;
-    if isSemanticVersion(g.CurrentBranch.Name)
-        opts.ToolboxVersion = g.CurrentBranch.Name;
-    else
-        opts.ToolboxVersion = "0.0.0";
-    end
+    % g = gitrepo;
+    % if isSemanticVersion(g.CurrentBranch.Name)
+    %     opts.ToolboxVersion = g.CurrentBranch.Name;
+    % else
+    %     opts.ToolboxVersion = "0.0.0";
+    % end
 
     % Folders to add to MATLAB path during toolbox installation, specified
     % as a string vector. When specifying ToolboxMatlabPath, include the
