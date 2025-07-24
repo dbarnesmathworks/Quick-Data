@@ -6,7 +6,7 @@ The functions are organized under the `qd.` namespace and are designed to simpli
 
 ## Installation
 
-1. Clone or download a released toolbox from this repository.
+1. Grab from the Releases the Quick Data Toolbox.
 2. In MATLAB, install the toolbox.
 
 ## Requirements
