@@ -1,5 +1,6 @@
 # Quick Data Toolbox
 [![Quick Data Toolbox](https://github.com/dbarnesmathworks/Quick-Data/actions/workflows/matlab-toolbox.yml/badge.svg)](https://github.com/dbarnesmathworks/Quick-Data/actions/workflows/matlab-toolbox.yml)
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=dbarnesmathworks/Quick-Data&project=QuickData&file=/toolbox/GettingStarted.m)
 
 **Quick Data (qd)** is a small utility toolbox for MATLAB that collects useful helper functions for data analysis workflows.
 
