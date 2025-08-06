@@ -4,8 +4,10 @@ function flightTable = aerospaceFlightData()
     % Output Arguments:
     %     flightTable - table containing flight data variables
 
-    % Load the flight data from the MAT-file
-    load('flightData.mat','courses','heights','latitudes','longitudes','speeds','timeOfArrival');
+    % Load the flight data from the local MAT-file
+    FlightDataMatFilePath = fileparts(mfilename("fullpath")) + "/+internal/flightData.mat";
+    load(FlightDataMatFilePath, 'courses','heights','latitudes','longitudes','speeds','timeOfArrival');
+    %load('flightData.mat','courses','heights','latitudes','longitudes','speeds','timeOfArrival');
     % Create a table with the specified variables
     flightTable = table(courses, heights, latitudes, longitudes, speeds, timeOfArrival);
 end

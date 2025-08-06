@@ -22,7 +22,7 @@ jobs:
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v2
         with:
-          products: Financial_Toolbox Aerospace_Toolbox
+          products: Financial_Toolbox
           
 
       - name: Run MATLAB Build
