@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,8 +25,28 @@ jobs:
           products: Financial_Toolbox
           
 
-      - name: Run MATLAB Build
+      - name: Run Build Tool check and test
         uses: matlab-actions/run-build@v2
+        with:
+            tasks: check test
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: test
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v2
+        with:
+          products: Financial_Toolbox
+
+      - name: Run Build Tool package
+        uses: matlab-actions/run-build@v2
+        with:
+            tasks: package
 
       - name: Upload packaged .mltbx file
         uses: actions/upload-artifact@v4
@@ -36,7 +56,6 @@ jobs:
             release/Quick Data Toolbox.mltbx
 
       - name: Create GitHub Release
-        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
            tag_name: ${{ github.ref_name }}
